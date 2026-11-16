@@ -1,14 +1,18 @@
 ﻿import 'package:go_router/go_router.dart';
 import 'package:{{app.snakeCase()}}/main.dart';
+import 'package:{{app.snakeCase()}}/routes/app_route_names.dart';
 import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/presentation/blocs/{{name.snakeCase()}}/{{name.snakeCase()}}_bloc.dart';
 import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/presentation/routes/{{name.snakeCase()}}_view_initial_params.dart';
 import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/presentation/views/{{name.snakeCase()}}_view.dart';
 
 class {{name.pascalCase()}}Route {
-  const String name = '{{module.snakeCase()}}_{{name.snakeCase()}}';
-  const String path = '/{{module.snakeCase()}}/{{name.snakeCase()}}';
+  static final String name = AppRouteNames.feature(
+    '{{module.snakeCase()}}',
+    '{{name.snakeCase()}}',
+  );
+  static const String path = '/{{module.snakeCase()}}/{{name.snakeCase()}}';
 
-  GoRoute get route => GoRoute(
+  static GoRoute get route => GoRoute(
     name: name,
     path: path,
     builder: (context, state) {
