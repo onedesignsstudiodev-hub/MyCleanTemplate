@@ -32,7 +32,7 @@ class Validator {
     }
   }
 
-  static validatePassword(String value) {
+  static String? validatePassword(String value) {
     if (value.isEmpty) {
       return "Password is required";
     } else if (value.length < 8) {
@@ -44,7 +44,7 @@ class Validator {
     }
   }
 
-  static validatePasswordType(String value, String type) {
+  static String? validatePasswordType(String value, String type) {
     if (value.isEmpty) {
       return "$type password is required";
     } else if (value.length < 8) {

@@ -220,8 +220,8 @@ class AppImage extends StatelessWidget {
     this.errorBgColor = AppColor.highlightText,
     this.svgColor,
     this.useBaseUrl = true,
-    required _AppImageType type,
-  }) : _type = type;
+    required this._type,
+  });
 
   @override
   Widget build(BuildContext context) {

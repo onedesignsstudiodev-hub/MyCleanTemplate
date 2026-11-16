@@ -1,4 +1,4 @@
-part of '{{name.snakeCase()}}_bloc.dart';
+﻿part of '{{name.snakeCase()}}_bloc.dart';
 
 class {{name.pascalCase()}}State extends Equatable {
   final {{name.pascalCase()}}ViewInitialParams initialParams;
@@ -29,3 +29,4 @@ class {{name.pascalCase()}}State extends Equatable {
     return '{{name.pascalCase()}}State(initialParams: $initialParams, {{name.camelCase()}}Response: ${{{name.camelCase()}}Response.toString()})';
   }
 }
+

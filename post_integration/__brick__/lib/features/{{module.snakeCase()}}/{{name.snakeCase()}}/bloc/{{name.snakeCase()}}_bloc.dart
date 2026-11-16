@@ -1,11 +1,11 @@
-import 'package:bloc/bloc.dart';
+﻿import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import '../../../../../../../../tool_bloc/post_integration/__brick__/lib/features/domain/entities/base_entity.dart';
-import '../../../../../../../../tool_bloc/post_integration/__brick__/lib/features/domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_entity.dart';
-import '../../../../../../../../tool_bloc/post_integration/__brick__/lib/domain/response/api_response.dart';
+import 'package:{{app.snakeCase()}}/modules/app/domain/entitties/base_entity.dart';
+import 'package:{{app.snakeCase()}}/domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_entity.dart';
+import 'package:{{app.snakeCase()}}/core/network/api_response.dart';
 import '../../../../domain/usecase/{{module.snakeCase()}}/{{name.snakeCase()}}_use_case.dart';
-import '../../../../../../../../tool_bloc/post_integration/__brick__/lib/features/features/{{module.snakeCase()}}/{{name.snakeCase()}}/{{name.snakeCase()}}_initial_params.dart';
-import '../../../../../../../../tool_bloc/post_integration/__brick__/lib/features/core/utils/utils.dart';
+import 'package:{{app.snakeCase()}}/features/{{module.snakeCase()}}/{{name.snakeCase()}}/{{name.snakeCase()}}_initial_params.dart';
+import 'package:{{app.snakeCase()}}/core/utils/utils.dart';
 
 part '{{name.snakeCase()}}_event.dart';
 part '{{name.snakeCase()}}_state.dart';
@@ -28,3 +28,5 @@ class {{name.pascalCase()}}Bloc extends Bloc<{{name.pascalCase()}}Event, {{name.
         }));
   }
 }
+
+

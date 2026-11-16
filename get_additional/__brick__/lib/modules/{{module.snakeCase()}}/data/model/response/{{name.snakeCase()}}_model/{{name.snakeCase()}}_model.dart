@@ -1,4 +1,4 @@
-import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/domain/entities/{{name.snakeCase()}}_entity.dart';
+﻿import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/domain/entities/{{name.snakeCase()}}_entity.dart';
 
 class {{name.pascalCase()}}Model {
   String? userMessage;
@@ -29,3 +29,4 @@ class {{name.pascalCase()}}Model {
     );
   }
 }
+

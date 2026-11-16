@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+﻿import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:{{app.snakeCase()}}/core/network/api_response.dart';
 import 'package:{{app.snakeCase()}}/core/utils/utils.dart';

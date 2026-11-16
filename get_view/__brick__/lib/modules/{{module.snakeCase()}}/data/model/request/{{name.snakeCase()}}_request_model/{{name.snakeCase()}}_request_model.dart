@@ -1,4 +1,4 @@
-
+﻿
 import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/domain/params/{{name.snakeCase()}}_param.dart';
 
 class {{name.pascalCase()}}RequestModel extends {{name.pascalCase()}}Param {

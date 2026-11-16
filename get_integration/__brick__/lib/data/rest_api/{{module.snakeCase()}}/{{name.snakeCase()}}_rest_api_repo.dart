@@ -1,12 +1,12 @@
-import 'package:fpdart/fpdart.dart';
-import '../../../../../../../tool_bloc/get_integration/__brick__/lib/data/header.dart/header.dart';
-import '../../../../../../../tool_bloc/get_integration/__brick__/lib/data/model/{{name.snakeCase()}}_json/{{name.snakeCase()}}_json.dart';
-import '../../../../../../../tool_bloc/get_integration/__brick__/lib/data/network/network.dart';
-import '../../../../../../../tool_bloc/get_integration/__brick__/lib/data/url/app_url.dart';
-import '../../../../../../../tool_bloc/get_integration/__brick__/lib/domain/failures/repo_failure.dart';
+﻿import 'package:fpdart/fpdart.dart';
+import 'package:{{app.snakeCase()}}/core/network/api_header.dart';
+import 'package:{{app.snakeCase()}}/data/model/{{module.snakeCase()}}/{{name.snakeCase()}}_json/{{name.snakeCase()}}_json.dart';
+import 'package:{{app.snakeCase()}}/core/network/network.dart';
+import 'package:{{app.snakeCase()}}/core/constant/app_url.dart';
+import 'package:{{app.snakeCase()}}/core/failures/repo_failure.dart';
 import '../../../domain/repository/{{module.snakeCase()}}/{{name.snakeCase()}}_repo.dart';
-import '../../../../../../../tool_bloc/get_integration/__brick__/lib/domain/entities/base_entity.dart';
-import '../../../../../../../tool_bloc/get_integration/__brick__/lib/data/model/base_json.dart';
+import 'package:{{app.snakeCase()}}/modules/app/domain/entitties/base_entity.dart';
+import 'package:{{app.snakeCase()}}/modules/app/data/models/base_json.dart';
 import '../../../domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_entity.dart';
 
 
@@ -32,3 +32,6 @@ class {{name.pascalCase()}}RestApiRepo implements {{name.pascalCase()}}Repo {
                 }
               }));
 }
+
+
+

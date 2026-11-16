@@ -1,4 +1,4 @@
-class {{name.pascalCase()}}Entity {
+﻿class {{name.pascalCase()}}Entity {
   final String token;
   final String email;
 
@@ -13,3 +13,4 @@ class {{name.pascalCase()}}Entity {
     });
   }
 }
+

@@ -2,9 +2,19 @@
 # Run "mason get" to install all registered bricks.
 # To learn more, visit https://docs.brickhub.dev.
 bricks:
+  get_additional:
+    path: get_additional
+  get_integration:
+    path: get_integration
   get_view:
-    path: MyCleanTemplate/get_view
+    path: get_view
+  post_additional:
+    path: post_additional
+  post_integration:
+    path: post_integration
   post_view:
-    path: MyCleanTemplate/post_view
+    path: post_view
   boiler_code:
-    path: MyCleanTemplate/boiler_code
+    path: boiler_code
+  view:
+    path: view

@@ -1,4 +1,4 @@
-import 'package:fpdart/fpdart.dart';
+﻿import 'package:fpdart/fpdart.dart';
 import 'package:{{app.snakeCase()}}/core/failures/repo_failure.dart';
 import 'package:{{app.snakeCase()}}/modules/app/domain/entitties/base_entity.dart';
 import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/data/datasource/{{name.snakeCase()}}_remote_data_source.dart';
@@ -7,7 +7,7 @@ import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/domain/params
 import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/domain/repository/{{name.snakeCase()}}_repo.dart';
 
 class {{name.pascalCase()}}RestApiRepo implements {{name.pascalCase()}}Repo {
-  final {{name.pascalCase()}}RemoteDataSource _dataSource;
+  final {{name.pascalCase()}}RemoteDataSource dataSource;
 
   {{name.pascalCase()}}RestApiRepo(this._dataSource);
 
@@ -16,7 +16,7 @@ class {{name.pascalCase()}}RestApiRepo implements {{name.pascalCase()}}Repo {
       {{name.camelCase()}}(
     {{name.pascalCase()}}Param param,
   ) =>
-      _dataSource.{{name.camelCase()}}(param).then(
+      dataSource.{{name.camelCase()}}(param).then(
         (value) => value.fold(
           (l) => left(RepoFailure(error: l.error)),
           (response) {
@@ -33,3 +33,4 @@ class {{name.pascalCase()}}RestApiRepo implements {{name.pascalCase()}}Repo {
         ),
       );
 }
+

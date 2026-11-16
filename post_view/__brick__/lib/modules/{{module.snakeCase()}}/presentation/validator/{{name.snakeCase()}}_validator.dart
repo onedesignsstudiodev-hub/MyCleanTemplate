@@ -1,4 +1,4 @@
-import 'package:fpdart/fpdart.dart';
+﻿import 'package:fpdart/fpdart.dart';
 import 'package:{{app.snakeCase()}}/core/failures/validation_failure.dart';
 import 'package:{{app.snakeCase()}}/core/validator/validator.dart';
 import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/domain/params/{{name.snakeCase()}}_param.dart';

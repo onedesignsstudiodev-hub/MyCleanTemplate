@@ -200,8 +200,8 @@ class AppButton extends StatelessWidget {
     this.borderColor,
     this.isLeft = true,
     this.gradient,
-    required _AppButtonType type,
-  }) : _type = type;
+    required this._type,
+  });
 
   final bool isLoading, isDisable;
   final String title;

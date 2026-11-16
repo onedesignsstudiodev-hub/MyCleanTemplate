@@ -26,6 +26,11 @@ environment:
 #  * a list of values (enums only)
 #  * an optional separator (list only)
 vars:
+  app:
+    type: string
+    description: App package name
+    default: fitness_app
+    prompt: What is the app package name?
   name:
     type: string
     description: Your Feature name

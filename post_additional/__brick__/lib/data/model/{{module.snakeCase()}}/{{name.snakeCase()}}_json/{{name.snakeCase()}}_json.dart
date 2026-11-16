@@ -1,4 +1,4 @@
-import 'package:collection/collection.dart';
+﻿import 'package:collection/collection.dart';
 
 
 class {{name.pascalCase()}}Json {
@@ -18,3 +18,4 @@ class {{name.pascalCase()}}Json {
       };
 
 }
+

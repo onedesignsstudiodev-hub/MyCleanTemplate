@@ -6,20 +6,20 @@ import 'package:{{name.snakeCase()}}/core/resource/app_color.dart';
 
 
 class Utils {
-  static logSuccess(String msg, {String? name}) {
+  static void logSuccess(String msg, {String? name}) {
     // if
     log('\x1B[32m$msg\x1B[0m', name: name != null ? '\x1B[32m$name\x1B[0m' : "");
   }
 
-  static logError(String msg, {String? name}) {
+  static void logError(String msg, {String? name}) {
     log('\x1B[31m$msg\x1B[0m', name: name != null ? '\x1B[31m$name\x1B[0m' : "");
   }
 
-  static logInfo(String msg, {String? name}) {
+  static void logInfo(String msg, {String? name}) {
     log('\x1B[37m$msg\x1B[0m', name: name != null ? '\x1B[37m$name\x1B[0m' : "");
   }
 
-  static toastMessage(String message, BuildContext? context) {
+  static void toastMessage(String message, BuildContext? context) {
     if (context != null) {
       FToast toast = FToast();
       toast.init(context);
@@ -53,7 +53,7 @@ class Utils {
     }
   }
 
-  static toastErrMessage(String message, BuildContext? context) {
+  static void toastErrMessage(String message, BuildContext? context) {
     if (message == "Unauthorized") {
       // logout(getIt());
     }

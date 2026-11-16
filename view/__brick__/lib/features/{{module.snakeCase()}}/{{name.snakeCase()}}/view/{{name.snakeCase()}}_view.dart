@@ -1,14 +1,9 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import '../bloc/{{name.snakeCase()}}_bloc.dart';
-import 'package:skyl/resource/app_color.dart';
-import 'package:skyl/resource/app_asset.dart';
+import 'package:{{app.snakeCase()}}/core/resource/app_color.dart';
 
-import 'package:skyl/utils/extension/app_context.dart';
-
-import '../../../../../../../../tool_bloc/view/__brick__/lib/component/app_bar/app_appbar.dart';
+import 'package:{{app.snakeCase()}}/component/app_bar/app_appbar.dart';
 
 
 class {{name.pascalCase()}}View extends StatefulWidget {
@@ -39,21 +34,24 @@ class _{{name.pascalCase()}}ViewState extends State<{{name.pascalCase()}}View> {
         decoration: BoxDecoration(gradient: AppColor.primaryGradient),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: context.pagePadding.top),
+            padding: EdgeInsets.symmetric(vertical: MediaQuery.paddingOf(context).top),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
 
               children: [
                 AppAppbar(width: 75.w, title: "${{name.upperCase()}}"),
-                Divider(
-                  color: AppColor.highlighlowest,
-                  height: 1.h,
-                  thickness: 1.h,
-                ).paddingOnly(top: 10.h, bottom: 20.h),
+                Padding(
+                  padding: EdgeInsets.only(top: 10.h, bottom: 20.h),
+                  child: Divider(
+                    color: AppColor.highlighlowest,
+                    height: 1.h,
+                    thickness: 1.h,
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: context.pagePadding.left,
+                    horizontal: MediaQuery.paddingOf(context).left,
                     //
                   ),
                   child: Column(
@@ -72,3 +70,5 @@ class _{{name.pascalCase()}}ViewState extends State<{{name.pascalCase()}}View> {
   
   }
 }
+
+

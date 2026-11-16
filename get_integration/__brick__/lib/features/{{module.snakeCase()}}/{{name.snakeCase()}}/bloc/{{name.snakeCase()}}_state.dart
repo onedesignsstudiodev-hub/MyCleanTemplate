@@ -1,4 +1,4 @@
-part of '{{name.snakeCase()}}_bloc.dart';
+﻿part of '{{name.snakeCase()}}_bloc.dart';
 
 @immutable
 class {{name.pascalCase()}}State {
@@ -27,3 +27,4 @@ class {{name.pascalCase()}}State {
     return '{{name.pascalCase()}}State(initialParams: $initialParams, {{name.camelCase()}}Response: ${{{name.camelCase()}}Response.toString()})';
   }
 }
+

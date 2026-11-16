@@ -1,8 +1,8 @@
-import 'package:fpdart/fpdart.dart';
-import '../../../../../../../tool_bloc/post_integration/__brick__/lib/data/network/network_handler.dart';
-import '../../../../../../../tool_bloc/post_integration/__brick__/lib/data/url/app_url.dart';
-import '../../../../../../../tool_bloc/post_integration/__brick__/lib/domain/failures/repo_failure.dart';
-import '../../../../../../../tool_bloc/post_integration/__brick__/lib/domain/entities/base_entity.dart';
+﻿import 'package:fpdart/fpdart.dart';
+import 'package:{{app.snakeCase()}}/core/network/network_handler.dart';
+import 'package:{{app.snakeCase()}}/core/constant/app_url.dart';
+import 'package:{{app.snakeCase()}}/core/failures/repo_failure.dart';
+import 'package:{{app.snakeCase()}}/modules/app/domain/entitties/base_entity.dart';
 import '../../entities/{{module.snakeCase()}}/{{name.snakeCase()}}_entity.dart';
 
 abstract class {{name.pascalCase()}}Repo {
@@ -12,3 +12,5 @@ abstract class {{name.pascalCase()}}Repo {
   {{name.pascalCase()}}Repo(this.network, this.appUrl);
   Future<Either<RepoFailure, BaseEntity>> {{name.camelCase()}}({{name.pascalCase()}}Entity data);
 }
+
+

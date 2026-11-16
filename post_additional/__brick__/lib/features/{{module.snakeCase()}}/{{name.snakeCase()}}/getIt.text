@@ -1,8 +1,8 @@
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/repository/{{module.snakeCase()}}/{{name.snakeCase()}}_repo.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/data/rest_api/{{module.snakeCase()}}/{{name.snakeCase()}}_rest_api_repo.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/features/{{module.snakeCase()}}/{{name.snakeCase()}}/bloc/{{name.snakeCase()}}_bloc.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/domain/usecase/{{module.snakeCase()}}/{{name.snakeCase()}}_use_case.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/features/{{module.snakeCase()}}/{{name.snakeCase()}}/{{name.snakeCase()}}_initial_params.dart';
+﻿import 'package:{{app.snakeCase()}}/domain/repository/{{module.snakeCase()}}/{{name.snakeCase()}}_repo.dart';
+import 'package:{{app.snakeCase()}}/data/rest_api/{{module.snakeCase()}}/{{name.snakeCase()}}_rest_api_repo.dart';
+import 'package:{{app.snakeCase()}}/features/{{module.snakeCase()}}/{{name.snakeCase()}}/bloc/{{name.snakeCase()}}_bloc.dart';
+import 'package:{{app.snakeCase()}}/domain/usecase/{{module.snakeCase()}}/{{name.snakeCase()}}_use_case.dart';
+import 'package:{{app.snakeCase()}}/features/{{module.snakeCase()}}/{{name.snakeCase()}}/{{name.snakeCase()}}_initial_params.dart';
 
 
 // <<<<<<<<<<<<<<<<<<<<<<<  {{name.pascalCase()}}  >>>>>>>>>>>>>>>>>>>>>>>
@@ -18,7 +18,7 @@ getIt.registerSingleton<{{name.pascalCase()}}Validator>(
 
   getIt.registerFactoryParam<{{name.pascalCase()}}Bloc, {{name.pascalCase()}}ViewInitialParams, dynamic>((params, _) => {{name.pascalCase()}}Bloc(params, getIt()));
 // <<<<<<<<<<<<<<<<<<<<<<<  {{name.pascalCase()}}Repo  >>>>>>>>>>>>>>>>>>>>>>>
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/entities/base_entity.dart';
+import 'package:{{app.snakeCase()}}/modules/app/domain/entitties/base_entity.dart';
 import '../../../domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_entity.dart';
 
 {{name.pascalCase()}}Repo(this.network, this.appUrl);
@@ -26,14 +26,11 @@ import '../../../domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_ent
 
 // <<<<<<<<<<<<<<<<<<<<<<<  {{name.pascalCase()}}RestRepo  >>>>>>>>>>>>>>>>>>>>>>>
 
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/data/model/{{name.snakeCase()}}_data_model/{{name.snakeCase()}}_data_model.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/data/network/network.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/data/url/app_url.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/failures/repo_failure.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/repository/{{module.snakeCase()}}/{{name.snakeCase()}}_repo.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/entities/base_entity.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/data/model/base_json.dart';
-import '../../../domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_entity.dart';
+import 'package:{{app.snakeCase()}}/data/model/{{module.snakeCase()}}/{{name.snakeCase()}}_json/{{name.snakeCase()}}_json.dart';
+import 'package:{{app.snakeCase()}}/core/network/network.dart';
+import 'package:{{app.snakeCase()}}/core/constant/app_url.dart';
+import 'package:{{app.snakeCase()}}/core/failures/repo_failure.dart';
+import 'package:{{app.snakeCase()}}/modules/app/data/models/base_json.dart';
 
  @override
   {{name.pascalCase()}}RestApiRepo(this.network,this.appUrl);
@@ -57,11 +54,8 @@ import '../../../domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_ent
 // <<<<<<<<<<<<<<<<<<<<<<<  {{name.pascalCase()}}UseCase  >>>>>>>>>>>>>>>>>>>>>>>
 
 
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/data/model/{{name.snakeCase()}}_data_model/{{name.snakeCase()}}_data_model.dart';
- import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/repository/{{module.snakeCase()}}/{{name.snakeCase()}}_repo.dart';
-import '../../../domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_entity.dart';
 import '../../../domain/failures/{{module.snakeCase()}}/{{name.snakeCase()}}_failure.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/validator/{{module.snakeCase()}}/{{name.snakeCase()}}_validator.dart';
+import 'package:{{app.snakeCase()}}/domain/validator/{{module.snakeCase()}}/{{name.snakeCase()}}_validator.dart';
 
  Future<Either<{{name.pascalCase()}}Failure, BaseEntity>> {{name.camelCase()}}Execute({{name.pascalCase()}}Entity data) async =>
       _validator.validate(data).fold(
@@ -74,9 +68,8 @@ import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/vali
 
 
 import 'package:fpdart/fpdart.dart';
-import '../../../domain/entities/{{module.snakeCase()}}/{{name.snakeCase()}}_entity.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/failures/validation_failure.dart';
-import '../../../../../../../tool_bloc/post_additional/__brick__/lib/domain/validator/validator.dart';
+import 'package:{{app.snakeCase()}}/core/failures/validation_failure.dart';
+import 'package:{{app.snakeCase()}}/core/validator/validator.dart';
 class {{name.pascalCase()}}Validator {
   Either<ValidationFailure, {{name.pascalCase()}}Entity> validate( {{name.pascalCase()}}Entity data) {
     if (Validator.validateEmail(data.email) != null) {
@@ -119,3 +112,5 @@ Future<void> _{{name.camelCase()}}Action(
     ApiResponse<BaseEntity>? {{name.camelCase()}}Response,
 
       {{name.camelCase()}}Response: {{name.camelCase()}}Response ?? this.{{name.camelCase()}}Response,
+
+

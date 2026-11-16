@@ -1,4 +1,4 @@
-class {{name.pascalCase()}}Entity {
+﻿class {{name.pascalCase()}}Entity {
   final String userMessage;
   final bool status;
 
@@ -17,3 +17,4 @@ class {{name.pascalCase()}}Entity {
     );
   }
 }
+

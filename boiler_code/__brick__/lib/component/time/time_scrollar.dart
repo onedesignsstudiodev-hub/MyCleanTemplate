@@ -1,4 +1,4 @@
-library time_picker_spinner;
+library;
 
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -12,11 +12,10 @@ class ItemScrollPhysics extends ScrollPhysics {
   final double targetPixelsLimit;
 
   const ItemScrollPhysics({
-    ScrollPhysics? parent,
+    super.parent,
     this.itemHeight,
     this.targetPixelsLimit = 3.0,
-  }) : assert(itemHeight != null && itemHeight > 0),
-       super(parent: parent);
+  }) : assert(itemHeight != null && itemHeight > 0);
 
   @override
   ItemScrollPhysics applyTo(ScrollPhysics? ancestor) {
@@ -42,9 +41,9 @@ class ItemScrollPhysics extends ScrollPhysics {
     double velocity,
   ) {
     double item = _getItem(position);
-    if (velocity < -tolerance.velocity)
+    if (velocity < -tolerance.velocity) {
       item -= targetPixelsLimit;
-    else if (velocity > tolerance.velocity)
+    } else if (velocity > tolerance.velocity)
       item += targetPixelsLimit;
     return _getPixels(position, item.roundToDouble());
   }
@@ -65,7 +64,7 @@ class ItemScrollPhysics extends ScrollPhysics {
       tolerance,
       velocity,
     );
-    if (target != position.pixels)
+    if (target != position.pixels) {
       return ScrollSpringSimulation(
         spring,
         position.pixels,
@@ -73,6 +72,7 @@ class ItemScrollPhysics extends ScrollPhysics {
         velocity,
         tolerance: tolerance,
       );
+    }
     return null;
   }
 
@@ -98,8 +98,8 @@ class TimePickerSpinner extends StatefulWidget {
   final bool isForce2Digits;
   final TimePickerCallback? onTimeChange;
 
-  TimePickerSpinner({
-    Key? key,
+  const TimePickerSpinner({
+    super.key,
     this.time,
     this.minutesInterval = 1,
     this.secondsInterval = 1,
@@ -113,7 +113,7 @@ class TimePickerSpinner extends StatefulWidget {
     this.spacing,
     this.isForce2Digits = false,
     this.onTimeChange,
-  }) : super(key: key);
+  });
 
   @override
   _TimePickerSpinnerState createState() => _TimePickerSpinnerState();
@@ -151,15 +151,11 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
   /// getter
 
   TextStyle? _getHighlightedTextStyle() {
-    return widget.highlightedTextStyle != null
-        ? widget.highlightedTextStyle
-        : defaultHighlightTextStyle;
+    return widget.highlightedTextStyle ?? defaultHighlightTextStyle;
   }
 
   TextStyle? _getNormalTextStyle() {
-    return widget.normalTextStyle != null
-        ? widget.normalTextStyle
-        : defaultNormalTextStyle;
+    return widget.normalTextStyle ?? defaultNormalTextStyle;
   }
 
   int _getHourCount() {
@@ -175,19 +171,19 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
   }
 
   double? _getItemHeight() {
-    return widget.itemHeight != null ? widget.itemHeight : defaultItemHeight;
+    return widget.itemHeight ?? defaultItemHeight;
   }
 
   double? _getItemWidth() {
-    return widget.itemWidth != null ? widget.itemWidth : defaultItemWidth;
+    return widget.itemWidth ?? defaultItemWidth;
   }
 
   double? _getSpacing() {
-    return widget.spacing != null ? widget.spacing : defaultSpacing;
+    return widget.spacing ?? defaultSpacing;
   }
 
   AlignmentGeometry? _getAlignment() {
-    return widget.alignment != null ? widget.alignment : defaultAlignment;
+    return widget.alignment ?? defaultAlignment;
   }
 
   bool isLoop(int value) {
@@ -217,7 +213,7 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
 
   @override
   void initState() {
-    currentTime = widget.time == null ? DateTime.now() : widget.time;
+    currentTime = widget.time ?? DateTime.now();
 
     currentSelectedHourIndex =
         (currentTime!.hour % (widget.is24HourMode ? 24 : 12)) + _getHourCount();
@@ -249,7 +245,7 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
     super.initState();
 
     if (widget.onTimeChange != null) {
-      WidgetsBinding.instance!.addPostFrameCallback(
+      WidgetsBinding.instance.addPostFrameCallback(
         (_) => widget.onTimeChange!(getDateTime()),
       );
     }
@@ -350,7 +346,7 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
   }
 
   Widget spacer() {
-    return Container(width: _getSpacing(), height: _getItemHeight()! * 5);
+    return SizedBox(width: _getSpacing(), height: _getItemHeight()! * 5);
   }
 
   Widget spinner(

@@ -1,4 +1,4 @@
-import 'package:fpdart/fpdart.dart';
+﻿import 'package:fpdart/fpdart.dart';
 import 'package:{{app.snakeCase()}}/core/network/network_service.dart';
 
 import 'package:{{app.snakeCase()}}/core/constant/app_url.dart';
@@ -47,3 +47,4 @@ class {{name.pascalCase()}}RemoteDataSourceImpl
             ),
           );
 }
+

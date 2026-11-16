@@ -9,7 +9,7 @@ import 'package:{{name.snakeCase()}}/core/store/store.dart';
 class StorePreference extends Store {
   static late SharedPreferences _prefs;
 
-  static create() async {
+  static Future<void> create() async {
     _prefs = await SharedPreferences.getInstance();
   }
 

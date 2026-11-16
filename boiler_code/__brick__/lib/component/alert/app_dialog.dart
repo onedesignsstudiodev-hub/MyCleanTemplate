@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:{{name.snakeCase()}}/core/resource/app_color.dart';
 
 
-appDialog(BuildContext context, Widget widget) {
+void appDialog(BuildContext context, Widget widget) {
   showDialog(
     context: context,
     barrierDismissible: true,
