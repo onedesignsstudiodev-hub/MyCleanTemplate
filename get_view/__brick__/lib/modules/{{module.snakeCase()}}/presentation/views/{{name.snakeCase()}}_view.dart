@@ -1,6 +1,6 @@
-﻿import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:{{app.snakeCase()}}/core/resource/app_color.dart';
 import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/presentation/blocs/{{name.snakeCase()}}/{{name.snakeCase()}}_bloc.dart';
 
@@ -18,8 +18,9 @@ class {{name.pascalCase()}}View extends StatefulWidget {
 
 class _{{name.pascalCase()}}ViewState extends State<{{name.pascalCase()}}View> {
   @override
-  void initState() {
-    super.initState();
+  void dispose() {
+    unawaited(widget.bloc.close());
+    super.dispose();
   }
   @override
   Widget build(BuildContext context) {

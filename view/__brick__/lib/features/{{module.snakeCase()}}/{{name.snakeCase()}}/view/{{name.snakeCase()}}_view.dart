@@ -1,4 +1,6 @@
-﻿import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../bloc/{{name.snakeCase()}}_bloc.dart';
 import 'package:{{app.snakeCase()}}/core/resource/app_color.dart';
@@ -18,6 +20,11 @@ class {{name.pascalCase()}}View extends StatefulWidget {
 }
 
 class _{{name.pascalCase()}}ViewState extends State<{{name.pascalCase()}}View> {
+  @override
+  void dispose() {
+    unawaited(widget.bloc.close());
+    super.dispose();
+  }
   @override
   void didChangeDependencies() {
     // widget.viewModel.context = context;

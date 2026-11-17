@@ -15,7 +15,7 @@ class {{name.pascalCase()}}Route {
   static GoRoute get route => GoRoute(
     name: name,
     path: path,
-    builder: (context, state) {
+    builder: (_, state) {
       final params = {{name.pascalCase()}}ViewInitialParams.fromUri(state.uri);
       final bloc = getIt<{{name.pascalCase()}}Bloc>(param1: params);
 
