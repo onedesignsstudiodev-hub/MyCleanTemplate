@@ -9,7 +9,7 @@ import 'package:{{app.snakeCase()}}/modules/{{module.snakeCase()}}/domain/reposi
 class {{name.pascalCase()}}RestApiRepo implements {{name.pascalCase()}}Repo {
   final {{name.pascalCase()}}RemoteDataSource dataSource;
 
-  {{name.pascalCase()}}RestApiRepo(this._dataSource);
+  {{name.pascalCase()}}RestApiRepo(this.dataSource);
 
   @override
   Future<Either<RepoFailure, BaseEntity<{{name.pascalCase()}}Entity>>> 

@@ -25,7 +25,7 @@ class {{name.pascalCase()}}RemoteDataSourceImpl
       network
           .get(
             AppUrl.{{name.camelCase()}}Url,
-            ApiHeader.json(),
+            ApiHeader.bearerHeaderOnly(data.token),
             query: data.toModel().toJson(),
         // authType: AuthType.cookie,
           )

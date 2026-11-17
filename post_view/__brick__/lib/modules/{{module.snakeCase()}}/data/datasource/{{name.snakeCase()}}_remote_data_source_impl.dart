@@ -25,7 +25,7 @@ class {{name.pascalCase()}}RemoteDataSourceImpl
           .post(
             AppUrl.{{name.camelCase()}}Url,
              data.toModel().toJson(),
-            ApiHeader.json(),
+            ApiHeader.bearerHeaderOnly(data.token),
         // authType: AuthType.cookie,
 
           )
